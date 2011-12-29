@@ -13,18 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/**
+ * 
+ */
 package au.com.ariesmcrae.rel;
 
-import java.io.IOException;
-import javax.servlet.http.*;
+import org.restlet.Application;
+import org.restlet.Restlet;
+import org.restlet.routing.Router;
 
 /**
  * @author ariesmcrae.com
  */
-@SuppressWarnings("serial")
-public class RelationshipServlet extends HttpServlet {
-	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-		resp.setContentType("text/plain");
-		resp.getWriter().println("Hello, world");
-	}
+public class FirstStepsApplication extends Application {
+    /**
+     * Creates a root Restlet that will receive all incoming calls.
+     */
+    @Override
+    public Restlet createInboundRoot() {
+        // Create a router Restlet that routes each call to a new instance of HelloWorldResource.
+        Router router = new Router(getContext());
+
+        // Defines only one route
+        router.attachDefault(HelloWorldResource.class);
+
+        return router;
+    }
 }

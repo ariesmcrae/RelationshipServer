@@ -15,16 +15,17 @@
  */
 package au.com.ariesmcrae.rel;
 
-import java.io.IOException;
-import javax.servlet.http.*;
+import org.restlet.resource.Get;
+import org.restlet.resource.ServerResource;
 
 /**
  * @author ariesmcrae.com
+ * 
+ * Resource which has only one representation.
  */
-@SuppressWarnings("serial")
-public class RelationshipServlet extends HttpServlet {
-	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-		resp.setContentType("text/plain");
-		resp.getWriter().println("Hello, world");
-	}
+public class HelloWorldResource extends ServerResource {
+    @Get
+    public String represent() {
+        return "hello, world (from the cloud!)";
+    }
 }
