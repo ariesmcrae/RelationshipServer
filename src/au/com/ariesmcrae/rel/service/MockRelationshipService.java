@@ -31,7 +31,15 @@ public class MockRelationshipService implements RelationshipService {
 		
 		relationships.add(new Relationship("http://Lib_AcctionReplica_Static_Relationship/rel/ref/v2/STREET_TYPE_CD"));
 		relationships.add(new Relationship("http://Lib_Acction_Extract/rel/ref/v1/REVIEW_RSN_CODE"));
-		
+		relationships.add(new Relationship("http://Lib_Acction_Extract/rel/ref/v1/ABC_CODE"));
+		relationships.add(new Relationship("http://Lib_Acction_Extract/rel/ref/v1/DEF_CODE"));
+		relationships.add(new Relationship("http://Lib_Acction_Extract/rel/ref/v1/GHI_CODE"));	
+		relationships.add(new Relationship("http://Lib_Acction_Extract/rel/ref/v1/JKL_CODE"));
+		relationships.add(new Relationship("http://Lib_Acction_Extract/rel/ref/v1/MNO_CODE"));
+		relationships.add(new Relationship("http://Lib_Acction_Extract/rel/ref/v1/PQR_CODE"));	
+		relationships.add(new Relationship("http://Lib_Acction_Extract/rel/ref/v1/STU_CODE"));
+		relationships.add(new Relationship("http://Lib_Acction_Extract/rel/ref/v1/VWX_CODE"));
+		relationships.add(new Relationship("http://Lib_Acction_Extract/rel/ref/v1/YZO_CODE"));		
 		
 		
 		return relationships;
