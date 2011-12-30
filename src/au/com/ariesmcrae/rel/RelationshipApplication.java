@@ -13,9 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/**
- * 
- */
 package au.com.ariesmcrae.rel;
 
 import org.restlet.Application;
@@ -25,17 +22,17 @@ import org.restlet.routing.Router;
 /**
  * @author ariesmcrae.com
  */
-public class FirstStepsApplication extends Application {
-    /**
-     * Creates a root Restlet that will receive all incoming calls.
-     */
+public class RelationshipApplication extends Application {
+	
+    /** Creates a root Restlet that will receive all incoming calls. */
     @Override
     public Restlet createInboundRoot() {
-        // Create a router Restlet that routes each call to a new instance of HelloWorldResource.
+        // Create a router Restlet that routes each call to a new instance of RestResource.
         Router router = new Router(getContext());
 
         // Defines only one route
-        router.attachDefault(HelloWorldResource.class);
+        router.attach("", RelationshipResource.class); //corresponds to e.g. http://relationshipserver.appspot.com/relationships. "relationships" is defined in web.xml
+        router.attach("/{namespace}", ParticipantResource.class); //corresponds to e.g. http://relationshipserver.appspot.com/relationships/http://Lib_Acction_Extract/rel/ref/v1/REVIEW_RSN_CODE
 
         return router;
     }

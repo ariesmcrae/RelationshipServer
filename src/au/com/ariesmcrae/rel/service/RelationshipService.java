@@ -13,19 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package au.com.ariesmcrae.rel;
+package au.com.ariesmcrae.rel.service;
 
-import org.restlet.resource.Get;
-import org.restlet.resource.ServerResource;
+import java.util.List;
+
+import au.com.ariesmcrae.rel.model.Participant;
+import au.com.ariesmcrae.rel.model.Relationship;
 
 /**
  * @author ariesmcrae.com
- * 
- * Resource which has only one representation.
  */
-public class HelloWorldResource extends ServerResource {
-    @Get
-    public String represent() {
-        return "hello, world (from the cloud!)";
-    }
+public interface RelationshipService {
+	List<Relationship> retrieveRelationships();
+	
+	List<Participant> retrieveParticipants(String namespace);
 }

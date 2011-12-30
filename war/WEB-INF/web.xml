@@ -21,13 +21,13 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 		<servlet-class>org.restlet.ext.servlet.ServerServlet</servlet-class>
 		<init-param>
 			<param-name>org.restlet.application</param-name>
-			<param-value>au.com.ariesmcrae.rel.FirstStepsApplication</param-value>
+			<param-value>au.com.ariesmcrae.rel.RelationshipApplication</param-value>
 		</init-param>
 	</servlet>
 	
 	<servlet-mapping>
 		<servlet-name>RestletServlet</servlet-name>
-		<url-pattern>/restlet/*</url-pattern>
+      <url-pattern>/relationships/*</url-pattern>  
 	</servlet-mapping>	
 
 	<welcome-file-list>
