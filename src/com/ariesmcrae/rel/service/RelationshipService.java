@@ -13,30 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package au.com.ariesmcrae.rel.model;
+package com.ariesmcrae.rel.service;
 
-import java.io.Serializable;
+import java.util.List;
+
+import com.ariesmcrae.rel.model.Participant;
+import com.ariesmcrae.rel.model.Relationship;
+
 
 /**
  * @author ariesmcrae.com
  */
-public class Participant implements Serializable {
-
-	private static final long serialVersionUID = 1L;
+public interface RelationshipService {
+	List<Relationship> retrieveRelationships();
 	
-	private String key;
-	private String csvValue;
-	private String serverValue;	
-	
-	public Participant(String newKey, String newCsvValue, String newServerValue) {
-		key = newKey;
-		csvValue = newCsvValue;
-		serverValue = newServerValue;
-	}
-	
-	
-	
-	public String getKey() { return key; }
-	public String getCsvValue() { return csvValue; }
-	public String getServerValue() { return serverValue; }
+	List<Participant> retrieveParticipants(String namespace);
 }

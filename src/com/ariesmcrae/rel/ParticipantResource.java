@@ -13,41 +13,40 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package au.com.ariesmcrae.rel;
+package com.ariesmcrae.rel;
 
 import java.util.List;
 
-import org.restlet.data.Form;
 import org.restlet.resource.Get;
 import org.restlet.resource.ServerResource;
 
-import au.com.ariesmcrae.rel.model.Relationship;
-import au.com.ariesmcrae.rel.service.MockRelationshipService;
-import au.com.ariesmcrae.rel.service.RelationshipService;
-import au.com.ariesmcrae.rel.util.RestUtil;
+import com.ariesmcrae.rel.model.Participant;
+import com.ariesmcrae.rel.service.MockRelationshipService;
+import com.ariesmcrae.rel.service.RelationshipService;
+import com.ariesmcrae.rel.util.RestUtil;
+
 
 /**
  * @author ariesmcrae.com
- * 
- * Resource which has only one representation.
  */
-public class RelationshipResource extends ServerResource {
+public class ParticipantResource extends ServerResource {
 	private static RelationshipService service = new MockRelationshipService(); //TODO inject.
 	private String namespace;
 	
 	@Get("json")	
-	public List<Relationship> retrieve() throws Exception {	
-		List<Relationship> relationshipNameSpace = null;
+	public List<Participant> retrieve() throws Exception {	
+		List<Participant> participants = null;
 
-		if (namespace == null) {
-			relationshipNameSpace = service.retrieveRelationships();
+		if (namespace != null) {
+			participants = service.retrieveParticipants(namespace);
+			
 		} else {
-			relationshipNameSpace = null;
+			participants = null;
 		}
 		
 		RestUtil.setResponseHeader(this); //Don't put this in the superclass.  Prefer composition over inheritance.
 
-		return relationshipNameSpace;
+		return participants;
 	}
 
 	
@@ -56,5 +55,4 @@ public class RelationshipResource extends ServerResource {
 		namespace = ((String) getRequestAttributes().get("namespace"));
 	}
 	
-
 }

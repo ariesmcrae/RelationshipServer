@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package au.com.ariesmcrae.rel.util;
+package com.ariesmcrae.rel.util;
 
 import org.restlet.data.Form;
 import org.restlet.resource.ServerResource;

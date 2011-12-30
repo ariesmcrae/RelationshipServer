@@ -13,13 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package au.com.ariesmcrae.rel.service;
+package com.ariesmcrae.rel.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import au.com.ariesmcrae.rel.model.Participant;
-import au.com.ariesmcrae.rel.model.Relationship;
+import com.ariesmcrae.rel.model.Participant;
+import com.ariesmcrae.rel.model.Relationship;
+
 
 /**
  * @author ariesmcrae.com
