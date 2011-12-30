@@ -6,17 +6,6 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
 
 	<servlet>
-		<servlet-name>RelationshipServer</servlet-name>
-		<servlet-class>au.com.ariesmcrae.rel.RelationshipServlet</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>RelationshipServer</servlet-name>
-		<url-pattern>/relationshipserver</url-pattern>
-	</servlet-mapping>
-
-
-	<servlet>
 		<servlet-name>RestletServlet</servlet-name>
 		<servlet-class>org.restlet.ext.servlet.ServerServlet</servlet-class>
 		<init-param>
