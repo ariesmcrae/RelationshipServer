@@ -17,7 +17,6 @@ package com.ariesmcrae.rel;
 
 import java.util.List;
 
-import org.restlet.data.Form;
 import org.restlet.resource.Get;
 import org.restlet.resource.ServerResource;
 
@@ -33,6 +32,7 @@ import com.ariesmcrae.rel.util.RestUtil;
  * Resource which has only one representation.
  */
 public class RelationshipResource extends ServerResource {
+	
 	private static RelationshipService service = new MockRelationshipService(); //TODO inject.
 	private String namespace;
 	
@@ -43,7 +43,7 @@ public class RelationshipResource extends ServerResource {
 		if (namespace == null) {
 			relationshipNameSpace = service.retrieveRelationships();
 		} else {
-			relationshipNameSpace = null;
+			throw new RuntimeException("Invalid query: Use ParticipantResource instead.");
 		}
 		
 		RestUtil.setResponseHeader(this); //Don't put this in the superclass.  Prefer composition over inheritance.

@@ -30,19 +30,13 @@ import com.ariesmcrae.rel.util.RestUtil;
  * @author ariesmcrae.com
  */
 public class ParticipantResource extends ServerResource {
+	
 	private static RelationshipService service = new MockRelationshipService(); //TODO inject.
 	private String namespace;
 	
 	@Get("json")	
 	public List<Participant> retrieve() throws Exception {	
-		List<Participant> participants = null;
-
-		if (namespace != null) {
-			participants = service.retrieveParticipants(namespace);
-			
-		} else {
-			participants = null;
-		}
+		List<Participant> participants = service.retrieveParticipants(namespace);
 		
 		RestUtil.setResponseHeader(this); //Don't put this in the superclass.  Prefer composition over inheritance.
 

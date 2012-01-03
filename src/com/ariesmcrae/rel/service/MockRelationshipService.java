@@ -17,6 +17,7 @@ package com.ariesmcrae.rel.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 import com.ariesmcrae.rel.model.Participant;
 import com.ariesmcrae.rel.model.Relationship;
@@ -50,8 +51,21 @@ public class MockRelationshipService implements RelationshipService {
 	
 	
 	public List<Participant> retrieveParticipants(String namespace) {
-		// TODO Auto-generated method stub
-		return null;
+		List<Participant> participants = new ArrayList<Participant>();
+
+		if ("http://Lib_AcctionReplica_Static_Relationship/rel/ref/v2/STREET_TYPE_CD".equals(namespace)) {
+			participants.add(new Participant("ST", "Street", "Street"));
+			participants.add(new Participant("CR", "Crescent", "Crescent"));
+			participants.add(new Participant("WY", "Way", "NoWay"));
+			participants.add(new Participant("BLV", "Boulevard", "Street"));
+			
+		} else if ("http://Lib_Acction_Extract/rel/ref/v1/REVIEW_RSN_CODE".equals(namespace)) {
+			participants.add(new Participant("01", "Not Registered", "Not Registered"));
+			participants.add(new Participant("02", "Not Allowed", "Not Allowed"));
+			participants.add(new Participant("03", "Too Many Penalties", "Too Many Penalties"));			
+		}
+		
+		return participants;
 	}
 	
 }
