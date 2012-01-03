@@ -17,7 +17,6 @@ package com.ariesmcrae.rel.service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
 
 import com.ariesmcrae.rel.model.Participant;
 import com.ariesmcrae.rel.model.Relationship;
