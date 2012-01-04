@@ -27,6 +27,9 @@ import com.ariesmcrae.rel.model.Relationship;
  */
 public class MockRelationshipService implements RelationshipService {
 
+	
+//	private static final Logger log = Logger.getLogger(MockRelationshipService.class.getName());
+	
 	public List<Relationship> retrieveRelationships() {
 		List<Relationship> relationships = new ArrayList<Relationship>();
 		

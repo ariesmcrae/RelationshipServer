@@ -15,6 +15,7 @@
  */
 package com.ariesmcrae.rel;
 
+import java.net.URLDecoder;
 import java.util.List;
 
 import org.restlet.resource.Get;
@@ -47,6 +48,15 @@ public class ParticipantResource extends ServerResource {
 	public void doInit() {
 		super.doInit();
 		namespace = ((String) getRequestAttributes().get("namespace"));
+		
+		if (namespace != null && namespace.trim().length() > 0) {
+			try {
+				namespace = URLDecoder.decode(namespace, "UTF-8");				
+			} catch (Exception e) {
+				//TODO swallow for now
+			}
+			//namespace = namespace.replaceAll("%2F", "/");
+		}
 	}
 	
 }

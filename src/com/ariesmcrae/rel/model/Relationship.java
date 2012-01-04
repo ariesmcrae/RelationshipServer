@@ -29,8 +29,6 @@ public class Relationship implements Serializable {
 	private String name;
 	private String namespace;
 
-
-	
 	public Relationship(String newNamespace) {
 		namespace = newNamespace;
 		extractGroupAndName();
@@ -58,5 +56,5 @@ public class Relationship implements Serializable {
 	
 	public String getGroup() { return group; }
 	public String getName() { return name; }
-	public String getNamespace() { return namespace; }
+	public String getNamespace() {return namespace; }
 }
